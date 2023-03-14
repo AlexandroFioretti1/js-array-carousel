@@ -1,5 +1,37 @@
+/* reset css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* utilitys */
+
+
+/* container img */
+.images img:not(.active) {
+    display: none;
+}
+
+/* button */
+.prev_arrow {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 3em;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+}
+
+.next_arrow {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 3em;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 50%;
 }
