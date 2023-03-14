@@ -6,7 +6,11 @@
 }
 
 /* utilitys */
-
+img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
 
 /* container img */
 .images img:not(.active) {
@@ -28,9 +32,9 @@
 .next_arrow {
     background-color: transparent;
     border: none;
-    color: black;
     font-size: 3em;
     cursor: pointer;
+    color: black;
     position: absolute;
     right: 0;
     bottom: 50%;

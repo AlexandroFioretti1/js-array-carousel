@@ -53,9 +53,9 @@ const slideImagesElements = document.querySelectorAll(
 );
 
 // aggiungo listen click next
-const nextEl = document.querySelector(".next");
+const nextEl = document.querySelector(".next_arrow");
 nextEl.addEventListener("click", function () {
-  console.log("cliccato next");
+  console.log("cliccato >");
 
   // seleziono la slide corrente
   const currentSlide = slideImagesElements[activeImage];
@@ -67,6 +67,11 @@ nextEl.addEventListener("click", function () {
   // creo un incremento del valore di "activeimage" variabile
   activeImage++;
 
+  // se dall'ultima img vado avanti troverò di nuovo la prima
+  if (activeImage >= slideImagesElements.length) {
+    // reset activeImage to 0 to start over the carousel
+    activeImage = 0;
+  }
   // seleziono la prossima slide
   const nextImage = slideImagesElements[activeImage];
 
@@ -76,9 +81,9 @@ nextEl.addEventListener("click", function () {
 });
 
 // aggiungo listen click prev
-const prevEl = document.querySelector(".prev");
+const prevEl = document.querySelector(".prev_arrow");
 prevEl.addEventListener("click", function () {
-  console.log("cliccato prev");
+  console.log("cliccato  <");
 
   // select current slide
   const currentSlide = slideImagesElements[activeImage];
@@ -89,6 +94,11 @@ prevEl.addEventListener("click", function () {
 
   //  creo un decremento del valore di "activeimage" variabile
   activeImage--;
+
+  // se dalla prima img vado indietro troverò di nuovo l'ultima
+  if (activeImage < 0) {
+    activeImage = slideImagesElements.length - 1;
+  }
 
   // seleziono la prossima slide
   const nextImage = slideImagesElements[activeImage];
